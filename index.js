@@ -8,7 +8,7 @@ images.forEach(image => {
     overlay.className = 'overlay';
     overlay.innerHTML = `
       <div class="overlay-content">
-        <img src="${image.src}" alt="Full Screen Image">
+        <img src="${image.src}" alt="Full Screen Image" style="width: 90%; height: auto; border-radius: 10px;">
         <button class="close-btn">Close</button>
       </div>
     `;
@@ -18,5 +18,16 @@ images.forEach(image => {
     overlay.querySelector('.close-btn').addEventListener('click', () => {
       overlay.remove();
     });
+  });
+});
+
+// Get all navigation links
+const navLinks = document.querySelectorAll('nav ul li a');
+
+// Add click event to show a message
+navLinks.forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault(); // Prevent the default action of the link
+    alert("You're already in the Shinex Hub");
   });
 });
