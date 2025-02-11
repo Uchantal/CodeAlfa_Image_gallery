@@ -13,7 +13,12 @@ function deleteLast() {
 
 function calculateResult() {
     try {
-        document.getElementById('display').value = eval(document.getElementById('display').value);
+        let result = eval(document.getElementById('display').value);
+        if (result="infinity") {
+            result= "undefinined"
+            
+        }
+        document.getElementById('display').value = result 
     } catch (error) {
         alert('Invalid expression');
     }
